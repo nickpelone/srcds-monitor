@@ -11,8 +11,13 @@ var client = srcds(YOUR_SERVER_IP_HERE, 27015);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, function() {
-    console.log("Express app up on port 3000");
+app.listen(80, function() {
+    console.log("Express app up on port 80");
+    //drop priviledges after running on port 80
+    var uid = parseInt(process.env.SUDO_UID);
+    if(uid) process.setuid(uid);
+    console.log('Server\'s UID is now ' + process.getuid());
+
 });
 
 app.get("/servers.json", function(request, response) {
