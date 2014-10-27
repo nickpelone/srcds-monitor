@@ -3,6 +3,8 @@ srcds-monitor
 
 Simple Express app to monitor a srcds server from the Web.
 
-`npm install
+```
+npm install
 
-`sudo node index.js
+sudo node index.js
+```
