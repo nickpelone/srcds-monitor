@@ -8,6 +8,7 @@ var app = express();
 var YOUR_SERVER_IP_HERE = 'srcds.nickpelone.com';
 var client = srcds(YOUR_SERVER_IP_HERE, 27015);
 
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(3000, function() {
@@ -17,11 +18,13 @@ app.listen(3000, function() {
 app.get("/servers.json", function(request, response) {
     client.info(function (error, info) {
         if(error) {
-            console.err(error);
+            console.log(error);
         } else {
             response.json(info);
             console.log(info);
+            client.close();
+            client = srcds(YOUR_SERVER_IP_HERE, 27015);
         }
-        client.close();
     });
 });
+
