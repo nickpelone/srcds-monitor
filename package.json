@@ -1,6 +1,6 @@
 {
   "name": "srcds-monitor",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Express web app to monitor a srcds server",
   "main": "index.js",
   "scripts": {
