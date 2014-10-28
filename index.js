@@ -6,7 +6,8 @@ var path = require('path');
 var app = express();
 
 var YOUR_SERVER_IP_HERE = 'srcds.nickpelone.com';
-var client = srcds(YOUR_SERVER_IP_HERE, 27015);
+var client1 = srcds(YOUR_SERVER_IP_HERE, 27015);
+var client2 = srcds(YOUR_SERVER_IP_HERE, 27016);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,15 +21,27 @@ app.listen(80, function() {
 
 });
 
-app.get("/servers.json", function(request, response) {
-    client.info(function (error, info) {
+app.get("/server1.json", function(request, response) {
+    client1.info(function (error, info) {
         if(error) {
             console.log(error);
         } else {
             response.json(info);
             console.log(info);
-            client.close();
-            client = srcds(YOUR_SERVER_IP_HERE, 27015);
+            client1.close();
+            client1 = srcds(YOUR_SERVER_IP_HERE, 27015);
+        }
+    });
+});
+app.get("/server2.json", function(request, response) {
+    client2.info(function (error, info) {
+        if(error) {
+            console.log(error);
+        } else {
+            response.json(info);
+            console.log(info);
+            client2.close();
+            client2 = srcds(YOUR_SERVER_IP_HERE, 27016);
         }
     });
 });
