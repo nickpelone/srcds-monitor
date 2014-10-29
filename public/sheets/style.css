@@ -2,6 +2,8 @@ body{
     font-family: 'RobotoDraft', sans-serif;
     background:#00bcd4; /* material design teal 300 */
     color:white;
+    height:100%;
+    margin: 0;
 }
 .container{
     background:#006064;
@@ -10,7 +12,6 @@ body{
 }
 .server{
     display:inline-block;
-    padding-left:20px;
     padding-top:30px;
 }
 paper-button{
