@@ -2,23 +2,29 @@
 <html>
     <head>
         <title>SRCDS Monitor</title>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <link rel="import" href="bower_components/paper-fab/index.html">
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+        <link rel="import" href="bower_components/core-icon/core-icon.html">
         <link rel="import" href="bower_components/core-icons/core-icons.html">
+        <link rel="import" href="bower_components/font-roboto/roboto.html">
+        <link rel="import" href="bower_components/paper-item/paper-item.html">
+        <link rel="import" href="bower_components/paper-button/paper-button.html">
+        <link rel="import" href="bower_components/core-icons/maps-icons.html">
+
         <link rel="stylesheet" href="sheets/style.css" type="text/css">
+         <script src="bower_components/platform/platform.js">
+  </script>
     </head>
-    <body>
+    <body unresolved>
         <div class="container">
-        <h1>SRCDS Monitor</h1>srcds.nickpelone.com<br>
+            <paper-item><h1>SRCDS Monitor</h1></paper-item>
+            <paper-item>&#64;srcds.nickpelone.com</paper-item>
 
-        <div id="server1" class="server">
-
+            <div id="server1" class="server"></div>
+            <div id="server2" class="server"></div>
+            <br><br>
+            <paper-fab icon="cached" id="button"></paper-fab>&nbsp;&nbsp;Refresh
         </div>
-        <div id="server2" class="server">
-
-            </div><br><br>
-        <button id="button">Update info</button>
-            </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/client-app.js"></script>
     </body>
