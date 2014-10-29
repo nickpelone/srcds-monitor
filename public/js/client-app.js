@@ -1,24 +1,35 @@
 /* jshint browser:true, jquery:true */
 (function () {
     //
+    function constructPaperItem(label, icon) {
+        var paperItem = "<paper-item icon='" + icon + "' label='" + label + "'></paper-item>";
+        return paperItem;
+    }
+    function constructPaperButton(label) {
+        var paperButton = "<paper-button>" + label + "</paper-button>";
+        return paperButton;
+    }
     function update() {
         $.getJSON("/server1.json", function (data) {
-            $("#server1").html("");
-            $("#server1").append("Name: " + data.serverName + "<br>");
-            $("#server1").append("Game: " + data.gameName + "<br>");
-            $("#server1").append("Players: " + data.numPlayers + "/" + data.maxPlayers + "<br>");
-            $("#server1").append("Current Map: " + data.map + "<br>");
-            $("#server1").append("<a href='steam://connect/srcds.nickpelone.com:27015'>Click here to join</a>");
+           $("#server1").html("");
+            $("#server1").append(constructPaperItem(data.serverName,"cloud-queue"));
+            $("#server1").append(constructPaperItem("Game: " + data.gameName,"description"));
+            $("#server1").append(constructPaperItem("Players: " + data.numPlayers + "/" + data.maxPlayers, "account-circle"));
+            $("#server1").append(constructPaperItem("Current Map: " + data.map, "file-map"));
+            $("#server1").append("<a href='steam://connect/srcds.nickpelone.com:27015'>"+ constructPaperButton("Click here to join") + "</a>");
         });
         $.getJSON("/server2.json", function (data) {
             $("#server2").html("");
-            $("#server2").append("Name: " + data.serverName + "<br>");
-            $("#server2").append("Game: " + data.gameName + "<br>");
-            $("#server2").append("Players: " + data.numPlayers + "/" + data.maxPlayers + "<br>");
-            $("#server2").append("Current Map: " + data.map + "<br>");
-            $("#server2").append("<a href='steam://connect/srcds.nickpelone.com:27016'>Click here to join</a>");
+            $("#server2").append(constructPaperItem(data.serverName,"cloud-queue"));
+            $("#server2").append(constructPaperItem("Game: " + data.gameName,"description"));
+            $("#server2").append(constructPaperItem("Players: " + data.numPlayers + "/" + data.maxPlayers, "account-circle"));
+            //$("#server2").append("Current Map: " + data.map + "<br>");
+            $("#server2").append(constructPaperItem("Current Map: " + data.map, "file-map"));
+            $("#server2").append("<a href='steam://connect/srcds.nickpelone.com:27016'>"+ constructPaperButton("Click here to join") + "</a>");
         });
     }
+
+
 
     $(document).ready(function () {
         update();
