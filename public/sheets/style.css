@@ -1,14 +1,14 @@
 body{
     font-family: 'RobotoDraft', sans-serif;
-    background:#00bcd4; /* material design teal 300 */
+    background:#e8eaf6; /* material design indigo 50 */
     color:white;
     height:100%;
     margin: 0;
 }
 .container{
-    background:#006064;
+    background:#3f51b5;/* material design indigo 500 */
     padding:10px;
-    display:inline-block;
+    text-align: center;
 }
 .server{
     display:inline-block;
@@ -17,4 +17,8 @@ body{
 paper-button{
     background:green;
     color:white;
+}
+
+#header {
+    display:inline-block;
 }
