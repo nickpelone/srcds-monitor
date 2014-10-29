@@ -1,7 +1,13 @@
 body{
     font-family: 'Roboto', sans-serif;
+    background:#00bcd4; /* material design teal 300 */
+    color:white;
 }
-
+.container{
+    background:#006064;
+    padding:10px;
+    display:inline-block;
+}
 .server{
     display:inline-block;
     padding-left:20px;
