@@ -12,7 +12,9 @@ body{
 }
 .server{
     display:inline-block;
-    padding-top:30px;
+}
+#server2{
+
 }
 paper-button{
     background:green;
