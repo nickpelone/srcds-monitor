@@ -45,4 +45,3 @@ app.get("/server2.json", function(request, response) {
         }
     });
 });
-
